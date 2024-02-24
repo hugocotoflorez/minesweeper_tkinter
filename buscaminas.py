@@ -8,7 +8,7 @@ from tkinter import font
 global seconds
 seconds = 0
 
-size = (16,16)
+global size
 mines = 30
 
 def conv(x:int,y:int)->int:
@@ -19,10 +19,10 @@ def invconv(i:int)->tuple[int,int]:
     'Transforms an i index to an equivalent x,y.'
     return i//(size[1]), i%size[1]
 
-def new_board(size:tuple[int,int],minas:int)->list[int]:
+def new_board(s:tuple[int,int],minas:int)->list[int]:
     'returns board (size: x*y):\n\n0 -> empty cell\n\n1-8 -> number\n\n9 -> mine'
     
-    
+    size = s
     seconds = 0
 
     #we save in buffer the mine(1) and non mine(0)
